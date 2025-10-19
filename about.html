@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - BIGBREW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="search.js" defer></script>
+    <style>
+        /* Header layout: left / center / right so items stay on one line */
+    header { display:flex; align-items:center; padding:12px 22px; gap:12px; }
+        .header-left { display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+        .header-left .brand { display:flex; align-items:center; gap:8px; }
+        .header-left .search-container { flex:0 0 auto; }
+        nav.main-nav { display:flex; gap:12px; flex:1 1 auto; justify-content:center; align-items:center; white-space:nowrap; }
+        nav.main-nav a { display:inline-block; padding:6px 10px; font-size:0.95rem; }
+        .nav-right { display:flex; align-items:center; gap:10px; flex:0 0 auto; }
+        /* fallback for very narrow screens */
+        @media (max-width:900px) {
+            nav.main-nav { gap:8px; font-size:0.9rem; }
+            nav.main-nav a { padding:6px 8px; }
+        }
+
+        body { background: #f7f7f7; margin: 0; font-family: 'Poppins', Arial, sans-serif; }
+        .about-hero { background: linear-gradient(180deg, #ffe066 60%, #f7f7f7 100%); padding: 48px 0 32px 0; text-align: center; }
+        .about-hero__img { width: 260px; max-width: 90vw; margin-bottom: 18px; }
+        .about-hero__title { font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 2.8rem; font-weight: 800; color: #7c4a00; margin-bottom: 10px; }
+        .about-hero__desc { font-size: 1.2rem; color: #7c4a00; margin-bottom: 18px; }
+        .about-hero__order { background: #7c4a00; color: #fff; border: none; border-radius: 24px; padding: 12px 32px; font-size: 1.1rem; font-family: 'Poppins', Arial, sans-serif; font-weight: 600; cursor: pointer; margin-bottom: 10px; }
+        .about-section { background: #fffbe6; padding: 36px 0 48px 0; text-align: center; }
+        .about-section__title { font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 2.1rem; font-weight: 800; color: #a97c3a; margin-bottom: 32px; }
+        .about-brews { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; }
+        .brew-card { background: #fff; border-radius: 18px; box-shadow: 0 2px 12px #0001; padding: 24px 18px 18px 18px; width: 220px; max-width: 90vw; display: flex; flex-direction: column; align-items: center; }
+        .brew-card__img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 12px; border-radius: 12px; background: #f7f7f7; }
+        .brew-card__name { font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 1.15rem; font-weight: 700; color: #7c4a00; margin-bottom: 6px; }
+        .brew-card__desc { font-size: 0.98rem; color: #a97c3a; margin-bottom: 0; }
+        @media (max-width: 700px) { .about-brews { flex-direction: column; gap: 24px; } .about-section__title { font-size: 1.4rem; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="brand" style="display:flex; align-items:center; gap:8px;">
+                <img class="brand__logo" src="BIGBREW LOGO.png" alt="BIGBREW logo">
+                <div class="brand__name">BIGBREW</div>
+            </div>
+            <!-- compact icon-only search button -->
+            <div class="search-container" style="flex:0 0 auto; margin:0 8px; position:relative;">
+                <button id="searchToggle" aria-label="Search" style="width:36px; height:36px; border-radius:18px; border:none; background:#ffffffcc; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                    <i class="fas fa-search" style="color:#7c4a00; font-size:14px;"></i>
+                </button>
+
+                <!-- inline overlay input (hidden by default) - appears to the right of the icon so it doesn't overlap the page edge -->
+                <div id="searchOverlay" style="display:none; position:absolute; left:44px; top:50%; transform:translateY(-50%); width:180px; z-index:1200;">
+                    <form id="searchForm" style="position:relative; display:inline-flex; align-items:center; width:100%;">
+                        <input type="search" id="searchInput" placeholder="Search..." 
+                            style="width:100%; height:34px; padding:6px 34px 6px 10px; border-radius:8px; border:1px solid #ddd; background:#fff; color:#7c4a00; font-family:'Poppins',sans-serif; font-size:0.86rem;">
+                        <button type="submit" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; color:#7c4a00; cursor:pointer;">
+                            <i class="fas fa-arrow-right" style="font-size:13px;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="about.html" class="active">About</a>
+            <a href="brewards.html">Brewards</a>
+            <a href="menu.html">Menu</a>
+            <a href="brewards-dashboard.html">Dashboard</a>
+        </nav>
+        <div class="nav-right">
+            <span class="pill" id="pointsPill">0 PTS</span>
+            <a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW LOGO.png" alt="profile"></a>
+        </div>
+    </header>
+    <main>
+        <section class="about-hero" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:32px; text-align:left;">
+            <div style="flex:1 1 260px; min-width:220px; display:flex; align-items:center; justify-content:center;">
+                <img class="about-hero__img" src="About-Media/milkteas sample.png" alt="Green and Brown Milktea" style="width:260px; max-width:90vw; margin-bottom:0;">
+            </div>
+            <div style="flex:2 1 320px; min-width:220px; padding-left:24px; display:flex; flex-direction:column; justify-content:center;">
+                <div class="about-hero__title" style="margin-bottom:10px;">BIGBREW</div>
+                <div class="about-hero__desc" style="margin-bottom:18px;">serves coffee, tea, and snacks that are <b>"big"</b> in taste but <b>"bit"</b> in price.</div>
+                <a href="menu.html"><button class="about-hero__order">ORDER NOW</button></a>
+            </div>
+        </section>
+        <section class="about-section">
+            <div class="about-section__title">A BREW TO SIP THE MOMENT</div>
+            <div class="about-brews">
+                <div class="brew-card">
+                    <img class="brew-card__img" src="About-Media/Pistachio Praf.png" alt="Pistachio Praf">
+                    <div class="brew-card__name">Pistachio Praf</div>
+                    <div class="brew-card__desc">Medio 16oz for ₱49 | Grande 22oz for ₱59</div>
+                </div>
+                <div class="brew-card">
+                    <img class="brew-card__img" src="About-Media/MangoSummer Praf.png" alt="Mango Summer Praf">
+                    <div class="brew-card__name">Mango Summer Praf</div>
+                    <div class="brew-card__desc">Medio 16oz for ₱49 | Grande 22oz for ₱59</div>
+                </div>
+                <div class="brew-card">
+                    <img class="brew-card__img" src="About-Media/WinterMelon Milktea.png" alt="Wintermelon Milktea">
+                    <div class="brew-card__name">Wintermelon Milk Tea</div>
+                    <div class="brew-card__desc">Medio 16oz for ₱39 | Grande 22oz for ₱49</div>
+                </div>
+            </div>
+            <a href="menu.html"><button class="about-hero__order" style="margin-top:32px;">DISCOVER MORE</button></a>
+        </section>
+
+        <section style="background:#7c4a00; color:white; padding:48px 24px; margin-top:32px;">
+            <div style="max-width:1200px; margin:0 auto;">
+                <div style="display:flex; flex-wrap:wrap; align-items:center; gap:32px;">
+                    <div style="flex:1 1 300px;">
+                        <h2 style="font-family:'Roboto Condensed',sans-serif; font-size:2.4rem; margin:0 0 16px 0;">FIND YOUR NEAREST</h2>
+                        <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+                            <h2 style="font-family:'Roboto Condensed',sans-serif; font-size:2.4rem; margin:0;">BIGBREW branch</h2>
+                            <img src="BIGBREW LOGO.png" alt="BIGBREW logo" style="height:40px; width:auto;">
+                        </div>
+                        <p style="font-size:1.1rem; margin:0 0 16px 0;">Big Brew originated serving daily brews since MAY 2024, which since then has grown rapidly and has been serving quality and bit in price.</p>
+                        <p style="font-size:1.1rem; margin:0 0 16px 0;">Whether you're looking for a night pick-me up or a morning energy boost.</p>
+                        <p style="font-size:1.1rem; margin:0;">Find the nearest location and enjoy your favorite drinks whenever you feel!</p>
+                        <div style="margin-top:24px; display:flex; gap:16px;">
+                            <a href="#" style="color:white; font-size:1.4rem;"><i class="fab fa-facebook"></i></a>
+                            <a href="#" style="color:white; font-size:1.4rem;"><i class="fab fa-twitter"></i></a>
+                            <a href="#" style="color:white; font-size:1.4rem;"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div style="flex:1 1 400px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.802548850809!2d121.04894857499732!3d14.554743185193774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8efd99aad53%3A0xb64b39847a866fde!2sTaft%20Avenue%2C%20Malate%2C%20Manila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1697104144621!5m2!1sen!2sph"
+                            width="100%" 
+                            height="450" 
+                            style="border:0; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

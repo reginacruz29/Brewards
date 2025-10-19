@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BREWARDS | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="search.js" defer></script>
+    <style>
+        header { display:flex; align-items:center; padding:12px 22px; gap:12px; }
+        .header-left { display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+        nav.main-nav { display:flex; gap:12px; flex:1 1 auto; justify-content:center; align-items:center; white-space:nowrap; }
+        .nav-right { display:flex; align-items:center; gap:10px; flex:0 0 auto; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="brand" style="display:flex; align-items:center; gap:8px;">
+                <img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+                <div class="brand__name">BIGBREW</div>
+            </div>
+            <div class="search-container" style="flex:0 0 auto; margin:0 8px; position:relative;">
+                <button id="searchToggle" aria-label="Search" style="width:36px; height:36px; border-radius:18px; border:none; background:#ffffffcc; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+                    <i class="fas fa-search" style="color:#7c4a00; font-size:14px;"></i>
+                </button>
+                <div id="searchOverlay" style="display:none; position:absolute; left:44px; top:50%; transform:translateY(-50%); width:180px; z-index:1200;">
+                    <form id="searchForm" style="position:relative; display:inline-flex; align-items:center; width:100%;">
+                        <input type="search" id="searchInput" placeholder="Search..." 
+                            style="width:100%; height:34px; padding:6px 34px 6px 10px; border-radius:8px; border:1px solid #ddd; background:#fff; color:#7c4a00; font-family:'Poppins',sans-serif; font-size:0.86rem;">
+                        <button type="submit" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; color:#7c4a00; cursor:pointer;">
+                            <i class="fas fa-arrow-right" style="font-size:13px;"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="brewards.html">Brewards</a>
+            <a href="menu.html">Menu</a>
+            <a href="brewards-dashboard.html">Dashboard</a>
+        </nav>
+        <div class="nav-right">
+            <span class="pill" id="pointsPill">0 PTS</span>
+            <a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+        </div>
+    </header>
+
+    <main class="container" style="max-width:1200px; margin:0 auto; padding:0;">
+        <!-- HERO SECTION -->
+    <section style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; border-radius:12px; margin:24px 0 0 0; padding:32px 32px 24px 32px; min-height:320px;">
+            <div style="flex:1 1 320px; min-width:320px; max-width:500px; display:flex; align-items:center; justify-content:center; position:relative;">
+                <img src="home-media/homepix.png" alt="BigBrew Home Small" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%) scale(1.5); width:250px; height:250px; box-shadow:none; object-fit:cover; background:transparent; border:none; z-index:3;">
+            </div>
+            <div style="flex:2 1 400px; min-width:320px; padding-left:220px;">
+                <h1 style="font-family:'Poppins',sans-serif; font-size:3rem; font-weight:800; letter-spacing:1px; margin:0 0 12px 0; color:#23180d;">BIGBREW</h1>
+                <div style="font-size:1.3rem; font-weight:600; color:#23180d; margin-bottom:8px;">serves coffee, tea, and snacks that are</div>
+                <div style="font-size:1.1rem; color:#23180d;">"BIG" in taste but "BIT" in price.</div>
+            </div>
+        </section>
+
+        <!-- KINDNESS/VIDEO SECTION -->
+        <section style="display:flex; flex-wrap:wrap; align-items:stretch; margin:32px 0 0 0; background:#a05c1a; border-radius:12px;">
+            <div style="flex:1 1 340px; min-width:320px; padding:36px 32px 36px 36px; color:#ffe6c7; display:flex; flex-direction:column; justify-content:center;">
+                <h2 style="font-family:'Poppins',sans-serif; font-size:2.2rem; font-weight:700; margin:0 0 18px 0; line-height:1.1;">Brewing Kindness<br>Through <span style="color:#fff;">#BigBrewCares</span></h2>
+                <p style="font-size:1.1rem; margin-bottom:18px;">At BigBrew, we believe that every cup we serve is an opportunity to share warmth, kindness, and hope. Through our #BigBrewCares initiatives, we reach out to communities across the country by sharing food, gifts, and smiles with those who need them most.</p>
+                <p style="font-size:1.1rem;">It is our way of giving back to the people who inspire us every day because great coffee tastes even better when it is brewed with compassion.</p>
+            </div>
+            <div style="flex:1 1 420px; min-width:320px; display:flex; align-items:center; justify-content:center; padding:36px 36px 36px 0;">
+                <div style="width:100%; max-width:420px;">
+                    <video controls poster="home-media/homepix.jpg" style="width:100%; border-radius:12px; background:#a05c1a;">
+                        <source src="home-media/BigBrew Vid.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <p class="footer" style="margin-top:32px;">© <span id="year"></span> BIGBREW • Brewards</p>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

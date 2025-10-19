@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+            <div class="brand__name">BIGBREW</div>
+        </div>
+        <nav class="main-nav">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="brewards.html">Brewards</a>
+            <a href="menu.html">Menu</a>
+            <a href="brewards-dashboard.html">Dashboard</a>
+        </nav>
+        <div class="nav-right">
+            <span class="pill" id="pointsPill">0 PTS</span>
+            <a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+        </div>
+    </header>
+
+    <main class="container" style="padding:40px 16px; text-align:center;">
+        <h2>SIGN UP</h2>
+        <div class="signup-container" style="max-width:420px; margin:18px auto;">
+            <form id="signUpForm">
+                <input id="signupName" type="text" placeholder="Username" required style="width:100%; padding:10px; margin:8px 0;">
+                <input id="signupEmail" type="email" placeholder="Email" required style="width:100%; padding:10px; margin:8px 0;">
+                <input id="signupPassword" type="password" placeholder="Password" required style="width:100%; padding:10px; margin:8px 0;">
+                <button id="signUpSubmit" type="submit" class="btn btn--primary">Sign Up</button>
+            </form>
+            <p style="margin-top:10px;"><a href="brewards-account.html">Already have an account? Sign in</a></p>
+        </div>
+    </main>
+
+    <script>
+        // Basic sign-up: save profile and password to localStorage so sign-in can use it
+        (function(){
+            var PROFILE_KEY = 'brewards_profile_v1';
+            var PASSWORD_KEY = 'brewards_password_v1';
+            var form = document.getElementById('signUpForm');
+            var nameInput = document.getElementById('signupName');
+            var emailInput = document.getElementById('signupEmail');
+            var passInput = document.getElementById('signupPassword');
+
+            function showInlineMessage(msg, isError){
+                // lightweight inline feedback below the form
+                var existing = document.getElementById('signupMsg');
+                if (existing) existing.remove();
+                var p = document.createElement('p');
+                p.id = 'signupMsg';
+                p.style.marginTop = '12px';
+                p.style.color = isError ? '#ff6666' : '#66cc66';
+                p.textContent = msg;
+                form.parentNode.appendChild(p);
+            }
+
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                var name = (nameInput.value || '').trim();
+                var email = (emailInput.value || '').trim();
+                var pass = (passInput.value || '');
+                if (!name){ showInlineMessage('Please enter a display name.', true); return; }
+                if (!email){ showInlineMessage('Please enter your email.', true); return; }
+                if (!pass || pass.length < 4){ showInlineMessage('Please enter a password (min 4 chars).', true); return; }
+
+                // Save profile and password (note: client-side demo only)
+                try {
+                    var profile = { name: name, email: email };
+                    localStorage.setItem(PROFILE_KEY, JSON.stringify(profile));
+                    localStorage.setItem(PASSWORD_KEY, pass);
+                    // Mark signed in and initialize points if missing
+                    localStorage.setItem('brewards_signed_in', '1');
+                    if (!localStorage.getItem('brewards_points_v2')) localStorage.setItem('brewards_points_v2', '0');
+                    showInlineMessage('Account created — redirecting...', false);
+                    setTimeout(function(){ window.location.href = 'brewards-dashboard.html'; }, 800);
+                } catch(err){
+                    showInlineMessage('Unable to create account right now.', true);
+                }
+            });
+        })();
+    </script>
+    </main>
+</body>
+</html>

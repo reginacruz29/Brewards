@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BREWARDS | Sustainable Rewards</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<script src="search.js" defer></script>
+	<style>
+		header { display:flex; align-items:center; padding:12px 22px; gap:12px; }
+		.header-left { display:flex; align-items:center; gap:8px; flex:0 0 auto; }
+		nav.main-nav { display:flex; gap:12px; flex:1 1 auto; justify-content:center; align-items:center; white-space:nowrap; }
+		.nav-right { display:flex; align-items:center; gap:10px; flex:0 0 auto; }
+	</style>
+</head>
+<body>
+	<header>
+		<div class="header-left">
+			<div class="brand" style="display:flex; align-items:center; gap:8px;">
+				<img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+				<div class="brand__name">BIGBREW</div>
+			</div>
+			<div class="search-container" style="flex:0 0 auto; margin:0 8px; position:relative;">
+				<button id="searchToggle" aria-label="Search" style="width:36px; height:36px; border-radius:18px; border:none; background:#ffffffcc; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+					<i class="fas fa-search" style="color:#7c4a00; font-size:14px;"></i>
+				</button>
+				<div id="searchOverlay" style="display:none; position:absolute; left:44px; top:50%; transform:translateY(-50%); width:180px; z-index:1200;">
+					<form id="searchForm" style="position:relative; display:inline-flex; align-items:center; width:100%;">
+						<input type="search" id="searchInput" placeholder="Search..." 
+							style="width:100%; height:34px; padding:6px 34px 6px 10px; border-radius:8px; border:1px solid #ddd; background:#fff; color:#7c4a00; font-family:'Poppins',sans-serif; font-size:0.86rem;">
+						<button type="submit" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; color:#7c4a00; cursor:pointer;">
+							<i class="fas fa-arrow-right" style="font-size:13px;"></i>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<nav class="main-nav">
+			<a href="home.html">Home</a>
+			<a href="about.html">About</a>
+			<a aria-current="page" href="brewards.html">Brewards</a>
+			<a href="menu.html">Menu</a>
+			<a href="brewards-dashboard.html">Dashboard</a>
+		</nav>
+		<div class="nav-right">
+			<span class="pill" id="pointsPill">0 PTS</span>
+			<a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+		</div>
+
+	</header>
+
+	<main class="container">
+
+		<h2 class="section-title" id="milktea"><span class="chip">29 • 39</span> MILKTEA</h2>
+		<div class="grid">
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/OKINAWA%20(MILKTEA).png" alt="Okinawa Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Okinawa</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/MATCHA%20(MILKTEA).png" alt="Matcha Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Matcha</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/WINTERMELON%20(MILKTEA).png" alt="Wintermelon Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Wintermelon</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/COOKIES%20%26%20CREAM%20(MILKTEA).png" alt="Cookies and Cream Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Cookies &amp; Cream</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CHEESECAKE%20(MILKTEA).png" alt="Cheesecake Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Cheesecake</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CHOCO%20KISSES%20(MILKTEA).png" alt="Choco Kisses Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Choco Kisses</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CHOCOLATE%20(MILKTEA).png" alt="Chocolate Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Chocolate</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/DARK%20CHOCO%20(MILKTEA).png" alt="Dark Choco Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Dark Choco</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/RED%20VELVET%20(MILKTEA).png" alt="Red Velvet Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Red Velvet</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/SALTED%20CARAMEL%20(MILKTEA).png" alt="Salted Caramel Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Salted Caramel</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/STRAWBERRY%20(MILKTEA).png" alt="Strawberry Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Strawberry</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/TARO%20(MILKTEA).png" alt="Taro Milktea" loading="lazy">
+				<div class="card__body"><span class="card__title">Taro</span></div>
+				<div class="card__footer sizes" data-section="milktea"></div>
+			</div>
+		</div>
+
+		<h2 class="section-title" id="frappe"><span class="chip">49 • 59</span> PRAF</h2>
+		<div class="grid">
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/COFFEE%20JELLY%20(PRAF).png" alt="Coffee Jelly Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Coffee Jelly</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/COOKIES%20%26%20CREAM%20(PRAF).png" alt="Cookies and Cream Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Cookies &amp; Cream</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/MOCA%20(PRAF).png" alt="Mocha Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Mocha</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/MATCHA%20(PRAF).png" alt="Matcha Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Matcha</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CREAMY%20AVOCADO%20(PRAF).png" alt="Creamy Avocado Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Creamy Avocado</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/JAVA%20CHIP%20(PRAF).png" alt="Java Chip Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Java Chip</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/STRAWBERRY%20(PRAF).png" alt="Strawberry Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Strawberry</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/TARO%20(PRAF).png" alt="Taro Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Taro</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CARAMEL%20MACCH%20(PRAF).png" alt="Caramel Macchiato Praf" loading="lazy">
+				<div class="card__body"><span class="card__title">Caramel Macchiato</span></div>
+				<div class="card__footer sizes" data-section="praf"></div>
+			</div>
+		</div>
+
+		<h2 class="section-title" id="fruit-tea"><span class="chip">29 • 39</span> FRUIT TEA</h2>
+		<div class="grid">
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/MANGO%20(FRUIT%20TEA).png" alt="Mango Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Mango</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KIWI%20(FRUIT%20TEA).png" alt="Kiwi Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Kiwi</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/BLUEBERRY%20(FRUIT%20TEA).png" alt="Blueberry Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Blueberry</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/WATERMELON%20(FRUIT%20TEA).png" alt="Watermelon Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Watermelon</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/CRANBERRY%20(FRUIT%20TEA).png" alt="Cranberry Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Cranberry</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/GREEN%20APPLE%20(FRUIT%20TEA).png" alt="Green Apple Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Green Apple</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/HONEY%20PEACH%20(FRUIT%20TEA).png" alt="Honey Peach Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Honey Peach</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/LEMON%20(FRUIT%20TEA).png" alt="Lemon Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Lemon</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/PASSION%20FRUIT%20(FRUIT%20TEA).png" alt="Passion Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Passion Fruit</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/RASPBERRY%20(FRUIT%20TEA).png" alt="Raspberry Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Raspberry</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/STRAWBERRY%20(FRUIT%20TEA).png" alt="Strawberry Fruit Tea" loading="lazy">
+				<div class="card__body"><span class="card__title">Strawberry</span></div>
+				<div class="card__footer sizes" data-section="fruit"></div>
+			</div>
+		</div>
+
+		<h2 class="section-title" id="iced-coffee"><span class="chip">29 • 39</span> ICED COFFEE</h2>
+		<div class="grid">
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20CARAMEL%20(COFFEE).png" alt="Kape Caramel" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Caramel</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20VANILLA%20(COFFEE).png" alt="Kape Vanilla" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Vanilla</span><span class="card__tag">M</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20MOCHA%20(COFFEE).png" alt="Kape Mocha" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Mocha</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20VIETNAMESE%20(COFFEE).png" alt="Kape Vietnamese" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Vietnamese</span><span class="card__tag">L</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20BRUSKO%20(COFFEE).png" alt="Kape Brusko" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Brusko</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20FUDGE%20(COFFEE).png" alt="Kape Fudge" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Fudge</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20MACCH%20(COFFEE).png" alt="Kape Macchiato" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Macchiato</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20MATCHA%20(COFFEE).png" alt="Kape Matcha" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Matcha</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+			<div class="card">
+				<img class="card__img" src="DRINK%20PICS/KAPE%20SPANISH%20(COFFEE).png" alt="Kape Spanish" loading="lazy">
+				<div class="card__body"><span class="card__title">Kape Spanish</span></div>
+				<div class="card__footer sizes" data-section="coffee"></div>
+			</div>
+		</div>
+
+		<p class="footer">© <span id="year"></span> BICABE • Brewards</p>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+

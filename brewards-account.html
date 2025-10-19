@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brewards Account</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+			<div class="brand__name">BIGBREW</div>
+		</div>
+		<nav class="main-nav">
+			<a href="home.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="brewards.html">Brewards</a>
+			<a href="menu.html">Menu</a>
+			<a href="brewards-dashboard.html">Dashboard</a>
+		</nav>
+		<div class="nav-right">
+			<span class="pill" id="pointsPill">0 PTS</span>
+			<a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+		</div>
+	</header>
+
+	<main class="container">
+		<h2 class="section-title"><span class="chip">Brewards</span> Account</h2>
+		<section class="brewards" aria-label="Manage your Brewards account" style="display:grid; gap:14px;">
+			<p class="brewards__desc">Manage your Brewards details. Use this account when scanning the kiosk to collect points.</p>
+			<!-- Profile editor -->
+			<!-- Existing profile form (used for save/update) -->
+			<div style="display:grid; gap:12px; grid-template-columns: 1fr; max-width:520px;">
+				<label style="display:grid; gap:6px;">
+					<span style="font-weight:700;">Name/nickname</span>
+					<input id="nameInput" type="text" placeholder="Juan Dela Cruz" style="padding:10px 12px; border-radius:10px; border:1px solid #ffffff30; background:#ffffff10; color:var(--text);">
+				</label>
+				<label style="display:grid; gap:6px;">
+					<span style="font-weight:700;">Email</span>
+					<input id="emailInput" type="email" placeholder="you@example.com" style="padding:10px 12px; border-radius:10px; border:1px solid #ffffff30; background:#ffffff10; color:var(--text);">
+				</label>
+				<label style="display:grid; gap:6px;">
+					<span style="font-weight:700;">Password</span>
+					<input id="passwordInput" type="password" placeholder="Password" style="padding:10px 12px; border-radius:10px; border:1px solid #ffffff30; background:#ffffff10; color:var(--text);">
+				</label>
+				<div style="display:flex; gap:10px; align-items:center;">
+					<button id="loginBtn" class="btn btn--primary" type="button">Login</button>
+					<a class="btn" href="brewards.html">Back to Brewards</a>
+				</div>
+				<p style="margin-top:10px; font-size:0.95rem;"><a href="sign-up.html">Don't have an account? Sign up</a></p>
+			</div>
+		</section>
+
+		<p class="footer">© <span id="year"></span> BIGBREW • Brewards</p>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BREWARDS | Sustainable Rewards</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+			<div class="brand__name">BIGBREW</div>
+		</div>
+
+		<nav class="main-nav">
+			<a href="home.html">Home</a>
+			<a href="about.html">About</a>
+			<a aria-current="page" href="brewards.html">Brewards</a>
+			<a href="menu.html">Menu</a>
+			<a href="brewards-dashboard.html">Dashboard</a>
+		</nav>
+		<div class="nav-right">
+			<span class="pill" id="pointsPill">0 PTS</span>
+			<a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+		</div>
+	</header>
+
+	<main class="container">
+		<!-- Top action cards -->
+		<div class="grid" aria-label="Brewards actions" style="grid-template-columns: repeat(auto-fit, 260px); justify-content:center; gap:14px;">
+			<div class="card">
+				<div style="height:260px; display:flex; align-items:center; justify-content:center; overflow:hidden; margin:16px;">
+					<img src="DRINK%20PICS/MOCA%20(PRAF).png" alt="Claim Rewards" style="max-height:120%; max-width:120%; transform:scale(1.5); object-fit:contain; display:block;">
+				</div>
+				<div class="card__body"><span class="card__title">CLAIM REWARDS</span></div>
+			</div>
+			<div class="card">
+				<div style="height:260px; display:flex; align-items:center; justify-content:center; background:#fff; border-radius:10px; margin:16px;">
+					<img src="sampleqr.png" alt="Scan QR" style="max-height:100%; max-width:90%; object-fit:contain; display:block;">
+				</div>
+				<div class="card__body"><span class="card__title">SCAN QR</span></div>
+			</div>
+		</div>
+
+		<!-- Get Started button directly under the cards -->
+		<div style="text-align:center; margin:24px 0 0;">
+			<a class="btn btn--primary" href="brewards-account.html">GET STARTED!</a>
+		</div>
+
+		<!-- Explainer -->
+		<section id="brewards" class="brewards" aria-label="How Brewards works">
+			<div class="brewards__top">
+				<span class="brewards__badge">BREWARDS</span>
+				<p class="brewards__desc">Donate your Big Brew disposable cups and start earning. Each valid scan adds points. Hit the goal and enjoy a free drink — simple, sustainable, and rewarding.</p>
+			</div>
+			<div style="margin-top:12px">
+				<h3 style="margin:0 0 10px 0; font-weight:800; letter-spacing:0.4px;">Earn Points, Get Free Drinks!</h3>
+				<p style="opacity:0.9; margin:0 0 12px 0;">Follow these quick steps in-store:</p>
+				<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+					<div class="card" style="text-align:center; padding:16px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+						<div class="card__body"><span class="card__title" style="font-size:18px; font-weight:800; letter-spacing:0.3px;">Buy a drink</span></div>
+					</div>
+					<div class="card" style="text-align:center; padding:16px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+						<div class="card__body"><span class="card__title" style="font-size:18px; font-weight:800; letter-spacing:0.3px;">Submit used cup to the smart bin</span></div>
+					</div>
+					<div class="card" style="text-align:center; padding:16px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+						<div class="card__body"><span class="card__title" style="font-size:18px; font-weight:800; letter-spacing:0.3px;">Scan your personal  QR on the kiosk </span></div>
+					</div>
+					<div class="card" style="text-align:center; padding:16px; min-height:120px; display:flex; align-items:center; justify-content:center;">
+						<div class="card__body"><span class="card__title" style="font-size:18px; font-weight:800; letter-spacing:0.3px;">Claim your points</span></div>
+					</div>
+				</div>
+				<p style="opacity:0.9; margin-top:14px;">If you encounter any issues, kindly ask our cashier to scan the store counter’s help QR to have points reviewed.</p>
+			</div>
+		</section>
+
+		<p class="footer">© <span id="year"></span> BIGBREW • Brewards</p>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+
+

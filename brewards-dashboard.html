@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brewards Dashboard</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<div class="brand">
+			<img class="brand__logo" src="BIGBREW%20LOGO.png" alt="BIGBREW logo">
+			<div class="brand__name">BIGBREW</div>
+		</div>
+		<nav class="main-nav">
+			<a href="home.html">Home</a>
+			<a href="about.html">About</a>
+			<a href="brewards.html">Brewards</a>
+			<a href="menu.html">Menu</a>
+			<a aria-current="page" href="brewards-dashboard.html">Dashboard</a>
+		</nav>
+		<div class="nav-right">
+			<span class="pill" id="pointsPill">0 PTS</span>
+			<a href="brewards-account.html" title="Account"><img class="avatar" src="BIGBREW%20LOGO.png" alt="profile"></a>
+		</div>
+	</header>
+
+	<main class="container">
+		<h2 class="section-title" style="display:flex; align-items:center; gap:10px;"><span class="chip">Brewards</span> <span id="helloName">Hi!</span></h2>
+
+	<!-- QR and Points -->
+	<div class="grid top-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+			<section class="brewards" style="text-align:center;">
+				<h3 style="margin:0 0 10px 0;">Your QR</h3>
+				<div style="background:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; height:324px; margin:16px auto; width:324px;">
+					<img id="personalQr" alt="Personal QR" src="sampleqr.png" style="height:260px; width:260px; object-fit:contain; display:block;">
+				</div>
+				<p style="opacity:0.85; margin:8px 0 0;">Show this at the kiosk to earn points.</p>
+				<p id="userId" style="font-family:monospace; font-weight:bold; color:#f7c948; margin: 8px 0 0;"></p>
+			</section>
+
+			<section class="brewards">
+				<h3 style="margin:0 0 10px 0;">Progress</h3>
+				<div class="progress"><div id="progressBar120" class="progress__bar"></div></div>
+				<div class="progress__label" id="progressLabel120">0 / 120 pts</div>
+				<div style="height:6px"></div>
+				<div class="progress"><div id="progressBar150" class="progress__bar" style="background:linear-gradient(90deg, var(--accent-2), #ffb423);"></div></div>
+				<div class="progress__label" id="progressLabel150">0 / 150 pts</div>
+				<p id="reward120" style="margin-top:8px;">Next: Free Fruit Tea/Coffee/Milktea</p>
+				<p id="reward150">Next: Free Praf</p>
+			</section>
+		</div>
+
+		<!-- Simulate kiosk scan buttons -->
+		<section class="brewards" style="margin-top:16px;">
+			<h3 style="margin:0 0 10px 0;">Simulate Kiosk Scan</h3>
+			<div style="display:flex; flex-wrap:wrap; gap:10px;">
+				<button class="btn" data-inc="3">Scan ₱29 (3 pts)</button>
+				<button class="btn" data-inc="5">Scan ₱39 (5 pts)</button>
+				<button class="btn" data-inc="6">Scan ₱49 Praf (6 pts)</button>
+				<button class="btn" data-inc="8">Scan ₱59 Praf (8 pts)</button>
+			</div>
+		</section>
+
+		<!-- Rewards to claim -->
+		<section class="brewards" style="margin-top:16px;">
+			<h3 style="margin:0 0 10px 0;">Rewards</h3>
+			<div class="grid rewards-grid" style="gap:8px;">
+				<!-- Free Fruit Tea (Kiwi) -->
+				<div class="card" data-cost="120" data-reward="Free Fruit Tea" style="text-align:center;">
+					<div style="height:220px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#00000020; border-top-left-radius:12px; border-top-right-radius:12px;">
+						<img src="DRINK%20PICS/KIWI%20(FRUIT%20TEA).png" alt="Free Fruit Tea (Kiwi)" style="width:100%; height:100%; object-fit:cover;">
+					</div>
+					<div class="card__body"><span class="card__title">Free Fruit Tea (120 pts)</span></div>
+					<div class="card__footer" style="padding-bottom:12px;">
+						<button class="btn btn--primary" id="claim120">Claim</button>
+					</div>
+				</div>
+
+				<!-- Free Coffee (Kape Fudge) -->
+				<div class="card" data-cost="120" data-reward="Free Coffee" style="text-align:center;">
+					<div style="height:220px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#00000020; border-top-left-radius:12px; border-top-right-radius:12px;">
+						<img src="DRINK%20PICS/KAPE%20FUDGE%20(COFFEE).png" alt="Free Coffee (Kape Fudge)" style="width:100%; height:100%; object-fit:cover;">
+					</div>
+					<div class="card__body"><span class="card__title">Free Coffee (120 pts)</span></div>
+					<div class="card__footer" style="padding-bottom:12px;">
+						<button class="btn btn--primary" id="claimCoffee120">Claim</button>
+					</div>
+				</div>
+
+				<!-- Free Praf (unchanged) -->
+				
+				<!-- Free Milktea (Red Velvet) -->
+				<div class="card" data-cost="120" data-reward="Free Milktea" style="text-align:center;">
+					<div style="height:220px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#00000020; border-top-left-radius:12px; border-top-right-radius:12px;">
+						<img src="DRINK%20PICS/RED%20VELVET%20(MILKTEA).png" alt="Free Milktea (Red Velvet)" style="width:100%; height:100%; object-fit:cover;">
+					</div>
+					<div class="card__body"><span class="card__title">Free Milktea (120 pts)</span></div>
+					<div class="card__footer" style="padding-bottom:12px;">
+						<button class="btn btn--primary" id="claimMilkTea120">Claim</button>
+					</div>
+				</div>
+
+				<div class="card" data-cost="150" data-reward="Free Praf" style="text-align:center;">
+					<div style="height:220px; overflow:hidden; display:flex; align-items:center; justify-content:center; background:#00000020; border-top-left-radius:12px; border-top-right-radius:12px;">
+						<img src="DRINK%20PICS/MATCHA%20(PRAF).png" alt="Free Praf" style="width:100%; height:100%; object-fit:cover;">
+					</div>
+					<div class="card__body"><span class="card__title">Free Praf (150 pts)</span></div>
+					<div class="card__footer" style="padding-bottom:12px;">
+						<button class="btn btn--primary" id="claim150">Claim</button>
+					</div>
+				</div>
+			</div>
+			<p style="opacity:0.85; margin-top:8px; text-align:center;">Flavor of your choice.</p>
+		</section>
+
+		<p class="footer">© <span id="year"></span> BIGBREW • Brewards</p>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+
+
